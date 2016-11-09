@@ -27,9 +27,13 @@ export class Outlet implements OnInit {
         return this.outlets.filter(o => o.id === contact.outletId)[0];
     }
 
-    goToContact(contact: AIMC.Baltic.Mobile.App.Interfaces.Entities.Contact) {
+    getOutletContactCount(outlet: AIMC.Baltic.Mobile.App.Interfaces.Entities.Outlet) {
+        return this.contacts.filter(c => c.outletId === outlet.id).length;
+    }
+
+    goToOutlet(outlet: AIMC.Baltic.Mobile.App.Interfaces.Entities.Outlet) {
         this.navController.push(OutletView, {
-            id: contact.id
+            id: outlet.id
         });
     }
 
@@ -38,5 +42,15 @@ export class Outlet implements OnInit {
         this.contacts = this.mockObjects.getContacts();
     }
 
+    filterItems(ev) {
+        var val: string = ev.target.value;
+
+        this.outlets = this.mockObjects.getOutlets();
+
+        if (val && val.trim() != '') {
+            this.outlets = this.outlets.filter(o => o.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+           
+        }
+    }
 
 }

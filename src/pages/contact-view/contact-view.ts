@@ -5,6 +5,8 @@ import { NavController, NavParams, ActionSheetController, ToastController } from
 
 import { MockObjects } from '../../mocks/mockobjects';
 
+import { OutletView } from '../outlet-view/outlet-view';
+
 @Component({
     templateUrl: 'contact-view.html',
     providers: [MockObjects]
@@ -31,17 +33,19 @@ export class ContactView implements OnInit {
         this.outlet = this.mockObjects.getOutlets().filter(o => o.id == this.contact.outletId)[0];
 
     }
-
-    presentOptions() {
-
-    }
-
+    
     call() {
         document.location.href = `tel:${this.contact.telephone}`;
     }
 
     email() {
-        document.location.href = `email:${this.contact.email}`;
+        document.location.href = `mailto:${this.contact.email}`;
+    }
+
+    goToOutlet() {
+        this.navController.push(OutletView, {
+            id: this.outlet.id
+        });
     }
 
     addToCart() {

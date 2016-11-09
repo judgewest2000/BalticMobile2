@@ -37,7 +37,7 @@ export class OutletView implements OnInit {
     }
 
     email() {
-        document.location.href = `email:${this.outlet.email}`;
+        document.location.href = `mailto:${this.outlet.email}`;
     }
 
     addToCart() {

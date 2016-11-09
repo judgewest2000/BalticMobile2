@@ -1,26 +1,23 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>My Contacts</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>My Contacts</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
-<ion-content padding class="contact">
-        
-        <ion-list>
+<ion-content class="contact">
 
+    <ion-searchbar (ionInput)="filterItems($event)"></ion-searchbar>
 
-          <button ion-item *ngFor="let contact of contacts" (click)="goToContact(contact)">
-              <ion-avatar item-left>
-                  <img src="{{contact.avatarUrl}}" />
-              </ion-avatar>
-              <h2>{{contact.name}}</h2>
-              <p>{{getOutlet(contact).name}}</p>
-          </button>
+    <ion-list>
+        <button ion-item *ngFor="let contact of contacts" (click)="goToContact(contact)">
+            <ion-avatar item-left>
+                <img src="{{contact.avatarUrl}}" />
+            </ion-avatar>
+            <h2>{{contact.name}}</h2>
+            <p>{{getOutlet(contact).name}}</p>
+        </button>
+    </ion-list>
 
-
-
-        </ion-list>
-        
 
 </ion-content>

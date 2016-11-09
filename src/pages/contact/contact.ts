@@ -29,12 +29,6 @@ export class Contact implements OnInit {
 
     goToContact(contact: AIMC.Baltic.Mobile.App.Interfaces.Entities.Contact) {
 
-        var loader = this.loadingController.create({
-            content: 'Loading your contact',
-            duration: 1000
-        });
-
-
         this.navController.push(ContactView, {
             id: contact.id
         });
@@ -43,6 +37,16 @@ export class Contact implements OnInit {
     ngOnInit() {
         this.outlets = this.mockObjects.getOutlets();
         this.contacts = this.mockObjects.getContacts();
+    }
+
+    filterItems(ev) {
+        var val: string = ev.target.value;
+
+        this.contacts = this.mockObjects.getContacts();
+
+        if (val && val.trim() != '') {
+            this.contacts = this.contacts.filter(c => c.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        }
     }
 
 

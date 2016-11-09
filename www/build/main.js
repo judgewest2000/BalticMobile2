@@ -34065,6 +34065,33 @@ var MockObjects = (function () {
                 email: 'aime.williams@ft.com',
                 profile: 'Aime Williams is a reporter for Financial Times, money section. She covers asset management and investments. She can be contacted by email.',
                 outletId: 515
+            },
+            {
+                id: 100571,
+                name: 'Adam Sills',
+                avatarUrl: 'https://pbs.twimg.com/profile_images/704631788019314688/D20twdRX_normal.jpg',
+                telephone: '+44 (20) 7931 2000',
+                email: 'adam.sills@telegraph.co.uk',
+                profile: "Adam Sills is the head of sport for The Daily Telegraph, The Sunday Telegraph and Telegraph and covers sports. He can be contacted by email.\n\nSills is part of the Sports Desk.\n\nSills was previously the head of sport planning for The Guardian.",
+                outletId: 27495
+            },
+            {
+                id: 100499,
+                name: 'Daniela Agnelli',
+                avatarUrl: 'https://pbs.twimg.com/profile_images/435789907018391553/M6_74r08_normal.jpeg',
+                telephone: '+44 (20) 7931 3639',
+                email: 'daniela.agnelli@telegraph.co.uk',
+                profile: "Daniela Agnelli is the fashion director for The Sunday Telegraph and the Telegraph Magazine, supplement of The Daily Telegraph and covers fashion, style, fashion shows and fashion designers. She can be contacted by email.\n\nAgnelli is part of the Fashion Desk.",
+                outletId: 27495
+            },
+            {
+                id: 100391,
+                name: 'Jason Burt',
+                avatarUrl: 'https://pbs.twimg.com/profile_images/742447294558113797/5oEWaCz2_normal.jpg',
+                telephone: '+44 (20) 7931 2000',
+                email: 'jason.burt@telegraph.co.uk',
+                profile: "Jason Burt is the chief football correspondent for The Daily Telegraph and The Sunday Telegraph and covers football. He can be contacted by email.\n\nHe is part of the Sports Desk.",
+                outletId: 27495
             }
         ];
         return mockContacts;
@@ -34078,6 +34105,13 @@ var MockObjects = (function () {
                 telephone: '+44 (20) 7873 3000',
                 email: 'ean@ft.com',
                 profile: "Financial Times is a broadsheet newspaper covering business, finance, politics and technology. The weekday section provides features on business people, ideas and developments, delivering information on business and finance. FTfm section covers global fund management industry, prices and FT fund ratings, providing analysis and debate to asset managers and private investors. The newspaper was first published in 1888 and is published Monday to Saturday."
+            }, {
+                id: 27495,
+                name: 'The Sunday Telegraph (Daily Newspaper)',
+                avatarUrl: 'https://pbs.twimg.com/profile_images/704631788019314688/D20twdRX_normal.jpg',
+                telephone: '+44 (20) 7931 2000',
+                email: 'stnews@telegraph.co.uk',
+                profile: "The Sunday Telegraph is a Sunday newspaper covering news, current affairs, business, culture, entertainment,  jobs, lifestyle, money, sport and travel. \n\nThe paper was awarded 'Front Page of the Year' at the Press Awards.\n\nNational Readership Survey (NRS) Readership Estimate - Newspaper and Supplements:\nAIR - Latest 12 Months: January 2014 - December 2014\n\nEst Population 15+ : 51742(000)\nTotal Adult AIR: 1238(000) = 2.4% \nTotal Men AIR: 646(000) = 2.6%\nTotal Women AIR: 592(000) = 2.2%\nTotal 15-34 AIR: 170(000) = 1.0%\nTotal 35+ AIR: 1068(000) = 3.0%\nTotal ABC1 AIR: 1071(000) = 3.9%\nTotal C2DE AIR: 167(000) = 0.7%\n\nMain Sunday Telegraph Desk's :\nCity Desk - Tel No: 020 7931 2710\nForeign Desk - Email : dtforeign@telegraph.co.uk, \nNews Desk - Tel No: 020 7931 3515, Email: stnews@telegraph.co.uk,\nSports Desk - Tel no: 020 7931 2600, Email: lesley.macdonald@telegraph.co.u,\nTravel Desk - Tel no: 020 7931 2381, Email: traveldesk@telegraph.co.uk,\nArts Desk- Email: artsfrontdesk@telegraph.co.uk\n\nDaily Newspaper Sections :\nBusiness - Email : city@telegraph.co.uk, Tel no: 020 7931 2000,\nDiscover - Email : traveldesk@telegraph.co.uk, Tel no: 020 7931 2000 (do not send press material here. Send an email and you will receive an automated response with a list of relevant email addresses), \nLife - Email: life@telegraph.co.uk,\nMoney - Email : city@telegraph.co.uk, Tel no: 020 7931 2000, \nSport - Email : stport@telegraph.co.uk, Tel no : 020 7931 2600, \n\nDaily Newspaper Special Sections (Please see supplements tab for the full listing) :\nLife\nStella"
             }
         ];
         return outlets;
@@ -34131,6 +34165,7 @@ var AboutPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__outlet_view_outlet_view__ = __webpack_require__(592);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ContactView; });
 /// <reference path="../../interfaces/entities.ts" />
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -34142,6 +34177,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -34158,13 +34194,16 @@ var ContactView = (function () {
         this.contact = this.mockObjects.getContacts().filter(function (c) { return c.id == _this.id; })[0];
         this.outlet = this.mockObjects.getOutlets().filter(function (o) { return o.id == _this.contact.outletId; })[0];
     };
-    ContactView.prototype.presentOptions = function () {
-    };
     ContactView.prototype.call = function () {
         document.location.href = "tel:" + this.contact.telephone;
     };
     ContactView.prototype.email = function () {
-        document.location.href = "email:" + this.contact.email;
+        document.location.href = "mailto:" + this.contact.email;
+    };
+    ContactView.prototype.goToOutlet = function () {
+        this.navController.push(__WEBPACK_IMPORTED_MODULE_3__outlet_view_outlet_view__["a" /* OutletView */], {
+            id: this.outlet.id
+        });
     };
     ContactView.prototype.addToCart = function () {
         var _this = this;
@@ -34200,7 +34239,7 @@ var ContactView = (function () {
         actionSheet.present();
     };
     ContactView = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\contact-view\contact-view.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>Contact View</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="contact">\n\n\n\n\n\n    <img src="{{contact.avatarUrl}}" />\n\n\n\n    <h3>{{contact.name}}</h3>\n\n\n\n    <p>{{outlet.name}}</p>\n\n\n\n\n\n    <ion-list>\n\n     \n\n        <button ion-item (click)="call()">\n\n            <ion-icon name="call" item-left></ion-icon>\n\n            <p>{{contact.telephone}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="email()">\n\n            <ion-icon name="mail" item-left></ion-icon>\n\n            <p>{{contact.email}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="addToCart()">\n\n            <ion-icon name="basket" item-left></ion-icon>\n\n            <p>Add to cart</p>\n\n        </button>\n\n\n\n    </ion-list>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\contact-view\contact-view.html"*/,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\contact-view\contact-view.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>Contact View</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="contact">\n\n\n\n\n\n    <ion-list>\n\n        <ion-item>\n\n            <img src="{{contact.avatarUrl}}" />\n\n\n\n            <h1>{{contact.name}}</h1>\n\n\n\n        </ion-item>\n\n        <button ion-item (click)="goToOutlet()">\n\n            <ion-icon name="git-network" item-left></ion-icon>\n\n            <p>{{outlet.name}}</p>\n\n        </button>\n\n        <button ion-item (click)="call()">\n\n            <ion-icon name="call" item-left></ion-icon>\n\n            <p>{{contact.telephone}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="email()">\n\n            <ion-icon name="mail" item-left></ion-icon>\n\n            <p>{{contact.email}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="addToCart()">\n\n            <ion-icon name="basket" item-left></ion-icon>\n\n            <p>Add to cart</p>\n\n        </button>\n\n\n\n    </ion-list>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\contact-view\contact-view.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* ActionSheetController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* ActionSheetController */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* ToastController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* ToastController */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavParams */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavParams */]) === 'function' && _e) || Object])
@@ -34245,10 +34284,6 @@ var Contact = (function () {
         return this.outlets.filter(function (o) { return o.id === contact.outletId; })[0];
     };
     Contact.prototype.goToContact = function (contact) {
-        var loader = this.loadingController.create({
-            content: 'Loading your contact',
-            duration: 1000
-        });
         this.navController.push(__WEBPACK_IMPORTED_MODULE_3__contact_view_contact_view__["a" /* ContactView */], {
             id: contact.id
         });
@@ -34257,13 +34292,21 @@ var Contact = (function () {
         this.outlets = this.mockObjects.getOutlets();
         this.contacts = this.mockObjects.getContacts();
     };
+    Contact.prototype.filterItems = function (ev) {
+        var val = ev.target.value;
+        this.contacts = this.mockObjects.getContacts();
+        if (val && val.trim() != '') {
+            this.contacts = this.contacts.filter(function (c) { return c.name.toLowerCase().indexOf(val.toLowerCase()) > -1; });
+        }
+    };
     Contact = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\contact\contact.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>My Contacts</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="contact">\n\n        \n\n        <ion-list>\n\n\n\n\n\n          <button ion-item *ngFor="let contact of contacts" (click)="goToContact(contact)">\n\n              <ion-avatar item-left>\n\n                  <img src="{{contact.avatarUrl}}" />\n\n              </ion-avatar>\n\n              <h2>{{contact.name}}</h2>\n\n              <p>{{getOutlet(contact).name}}</p>\n\n          </button>\n\n\n\n\n\n\n\n        </ion-list>\n\n        \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\contact\contact.html"*/,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\contact\contact.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>My Contacts</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="contact">\n\n\n\n    <ion-searchbar (ionInput)="filterItems($event)"></ion-searchbar>\n\n\n\n    <ion-list>\n\n        <button ion-item *ngFor="let contact of contacts" (click)="goToContact(contact)">\n\n            <ion-avatar item-left>\n\n                <img src="{{contact.avatarUrl}}" />\n\n            </ion-avatar>\n\n            <h2>{{contact.name}}</h2>\n\n            <p>{{getOutlet(contact).name}}</p>\n\n        </button>\n\n    </ion-list>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\contact\contact.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]]
         }), 
-        __metadata('design:paramtypes', [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === 'function' && _c) || Object])
     ], Contact);
     return Contact;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=contact.js.map
 
@@ -91695,7 +91738,7 @@ var OutletView = (function () {
         document.location.href = "tel:" + this.outlet.telephone;
     };
     OutletView.prototype.email = function () {
-        document.location.href = "email:" + this.outlet.email;
+        document.location.href = "mailto:" + this.outlet.email;
     };
     OutletView.prototype.addToCart = function () {
         var _this = this;
@@ -91731,7 +91774,7 @@ var OutletView = (function () {
         actionSheet.present();
     };
     OutletView = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\outlet-view\outlet-view.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>Outlet View</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="outlet">\n\n\n\n\n\n    <img src="{{outlet.avatarUrl}}" />\n\n\n\n    <h3>{{outlet.name}}</h3>\n\n\n\n    <ion-list>\n\n     \n\n        <button ion-item (click)="call()">\n\n            <ion-icon name="call" item-left></ion-icon>\n\n            <p>{{outlet.telephone}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="email()">\n\n            <ion-icon name="mail" item-left></ion-icon>\n\n            <p>{{outlet.email}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="addToCart()">\n\n            <ion-icon name="basket" item-left></ion-icon>\n\n            <p>Add to cart</p>\n\n        </button>\n\n\n\n    </ion-list>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\outlet-view\outlet-view.html"*/,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\outlet-view\outlet-view.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>Outlet View</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="outlet">\n\n\n\n\n\n    <ion-list>\n\n\n\n        <ion-item>\n\n            <img src="{{outlet.avatarUrl}}" />\n\n            <h1>{{outlet.name}}</h1>\n\n        </ion-item>\n\n\n\n        <button ion-item (click)="call()">\n\n            <ion-icon name="call" item-left></ion-icon>\n\n            <p>{{outlet.telephone}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="email()">\n\n            <ion-icon name="mail" item-left></ion-icon>\n\n            <p>{{outlet.email}}</p>\n\n        </button>\n\n\n\n        <button ion-item (click)="addToCart()">\n\n            <ion-icon name="basket" item-left></ion-icon>\n\n            <p>Add to cart</p>\n\n        </button>\n\n\n\n    </ion-list>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\outlet-view\outlet-view.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* ActionSheetController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* ActionSheetController */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* ToastController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* ToastController */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavParams */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavParams */]) === 'function' && _e) || Object])
@@ -91775,17 +91818,27 @@ var Outlet = (function () {
     Outlet.prototype.getOutlet = function (contact) {
         return this.outlets.filter(function (o) { return o.id === contact.outletId; })[0];
     };
-    Outlet.prototype.goToContact = function (contact) {
+    Outlet.prototype.getOutletContactCount = function (outlet) {
+        return this.contacts.filter(function (c) { return c.outletId === outlet.id; }).length;
+    };
+    Outlet.prototype.goToOutlet = function (outlet) {
         this.navController.push(__WEBPACK_IMPORTED_MODULE_3__outlet_view_outlet_view__["a" /* OutletView */], {
-            id: contact.id
+            id: outlet.id
         });
     };
     Outlet.prototype.ngOnInit = function () {
         this.outlets = this.mockObjects.getOutlets();
         this.contacts = this.mockObjects.getContacts();
     };
+    Outlet.prototype.filterItems = function (ev) {
+        var val = ev.target.value;
+        this.outlets = this.mockObjects.getOutlets();
+        if (val && val.trim() != '') {
+            this.outlets = this.outlets.filter(function (o) { return o.name.toLowerCase().indexOf(val.toLowerCase()) > -1; });
+        }
+    };
     Outlet = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\outlet\outlet.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>My Contacts</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="contact">\n\n        \n\n        <ion-list>\n\n\n\n\n\n          <button ion-item *ngFor="let contact of contacts" (click)="goToContact(contact)">\n\n              <ion-avatar item-left>\n\n                  <img src="{{contact.avatarUrl}}" />\n\n              </ion-avatar>\n\n              <h2>{{contact.name}}</h2>\n\n              <p>{{getOutlet(contact).name}}</p>\n\n          </button>\n\n\n\n\n\n\n\n        </ion-list>\n\n        \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\outlet\outlet.html"*/,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({template:/*ion-inline-start:"G:\code\BalticMobile2\src\pages\outlet\outlet.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>My Outlets</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="outlet">\n\n\n\n    <ion-searchbar (ionInput)="filterItems($event)"></ion-searchbar>\n\n\n\n    <ion-list>\n\n        <button ion-item *ngFor="let outlet of outlets" (click)="goToOutlet(outlet)">\n\n            <ion-avatar item-left>\n\n                <img src="{{outlet.avatarUrl}}" />\n\n            </ion-avatar>\n\n            <h2>{{outlet.name}}</h2>\n\n            <p>Contacts: {{getOutletContactCount(outlet)}}</p>\n\n        </button>\n\n    </ion-list>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\code\BalticMobile2\src\pages\outlet\outlet.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__mocks_mockobjects__["a" /* MockObjects */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === 'function' && _c) || Object])

@@ -5,18 +5,20 @@
 </ion-header>
 
 
-<ion-content padding class="contact">
-
-
-    <img src="{{contact.avatarUrl}}" />
-
-    <h3>{{contact.name}}</h3>
-
-    <p>{{outlet.name}}</p>
+<ion-content class="contact">
 
 
     <ion-list>
-     
+        <ion-item>
+            <img src="{{contact.avatarUrl}}" />
+
+            <h1>{{contact.name}}</h1>
+
+        </ion-item>
+        <button ion-item (click)="goToOutlet()">
+            <ion-icon name="git-network" item-left></ion-icon>
+            <p>{{outlet.name}}</p>
+        </button>
         <button ion-item (click)="call()">
             <ion-icon name="call" item-left></ion-icon>
             <p>{{contact.telephone}}</p>

@@ -5,15 +5,16 @@
 </ion-header>
 
 
-<ion-content padding class="outlet">
+<ion-content class="outlet">
 
-
-    <img src="{{outlet.avatarUrl}}" />
-
-    <h3>{{outlet.name}}</h3>
 
     <ion-list>
-     
+
+        <ion-item>
+            <img src="{{outlet.avatarUrl}}" />
+            <h1>{{outlet.name}}</h1>
+        </ion-item>
+
         <button ion-item (click)="call()">
             <ion-icon name="call" item-left></ion-icon>
             <p>{{outlet.telephone}}</p>
