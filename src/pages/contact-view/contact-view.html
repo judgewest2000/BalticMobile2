@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Contact</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="contact">
+
+
+    <img src="{{contact.avatarUrl}}" />
+
+    <h3>{{contact.name}}</h3>
+
+    <p>{{outlet.name}}</p>
+
+
+    <ion-list>
+     
+        <button ion-item (click)="call()">
+            <ion-icon name="call" item-left></ion-icon>
+            <p>{{contact.telephone}}</p>
+        </button>
+
+        <button ion-item (click)="email()">
+            <ion-icon name="mail" item-left></ion-icon>
+            <p>{{contact.email}}</p>
+        </button>
+
+        <button ion-item (click)="addToCart()">
+            <ion-icon name="basket" item-left></ion-icon>
+            <p>Add to cart</p>
+        </button>
+
+    </ion-list>
+
+
+
+
+</ion-content>

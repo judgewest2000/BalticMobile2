@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Contacts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="contact">
+        
+        <ion-list>
+
+
+          <button ion-item *ngFor="let contact of contacts" (click)="goTo(contact)">
+              <ion-avatar item-left>
+                  <img src="{{contact.avatarUrl}}" />
+              </ion-avatar>
+              <h2>{{contact.name}}</h2>
+              <p>{{getOutlet(contact).name}}</p>
+          </button>
+
+
+
+        </ion-list>
+        
+
+</ion-content>
