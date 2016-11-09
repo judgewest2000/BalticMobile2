@@ -7,12 +7,18 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ContactView } from '../pages/contact-view/contact-view';
 
+import {Outlet} from '../pages/outlet/outlet';
+
+import {OutletView} from '../pages/outlet-view/outlet-view';
+
 @NgModule({
     declarations: [
         MyApp,
         AboutPage,
         Contact,
         ContactView,
+        Outlet,
+        OutletView,
         HomePage,
         TabsPage
     ],
@@ -25,6 +31,8 @@ import { ContactView } from '../pages/contact-view/contact-view';
         AboutPage,
         Contact,
         ContactView,
+        Outlet,
+        OutletView,
         HomePage,
         TabsPage
     ],

@@ -6,12 +6,10 @@ import { NavController, NavParams, ActionSheetController, ToastController } from
 import { MockObjects } from '../../mocks/mockobjects';
 
 @Component({
-    templateUrl: 'contact-view.html',
+    templateUrl: 'outlet-view.html', 
     providers: [MockObjects]
 })
-export class ContactView implements OnInit {
-
-    contact: AIMC.Baltic.Mobile.App.Interfaces.Entities.Contact;
+export class OutletView implements OnInit {
 
     outlet: AIMC.Baltic.Mobile.App.Interfaces.Entities.Outlet;
 
@@ -27,9 +25,7 @@ export class ContactView implements OnInit {
     }
 
     ngOnInit() {
-        this.contact = this.mockObjects.getContacts().filter(c => c.id == this.id)[0];
-        this.outlet = this.mockObjects.getOutlets().filter(o => o.id == this.contact.outletId)[0];
-
+        this.outlet = this.mockObjects.getOutlets().filter(o => o.id == this.id)[0];
     }
 
     presentOptions() {
@@ -37,11 +33,11 @@ export class ContactView implements OnInit {
     }
 
     call() {
-        document.location.href = `tel:${this.contact.telephone}`;
+        document.location.href = `tel:${this.outlet.telephone}`;
     }
 
     email() {
-        document.location.href = `email:${this.contact.email}`;
+        document.location.href = `email:${this.outlet.email}`;
     }
 
     addToCart() {
@@ -53,7 +49,7 @@ export class ContactView implements OnInit {
                     handler: () => {
 
                         let toast = this.toastController.create({
-                            message: `${this.contact.name} has been added to your briefcase`,
+                            message: `${this.outlet.name} has been added to your briefcase`,
                             duration: 3000,
                             showCloseButton: true,
                             closeButtonText: 'OK'
@@ -67,7 +63,7 @@ export class ContactView implements OnInit {
                     handler: () => {
 
                         let toast = this.toastController.create({
-                            message: `${this.contact.name} has NOT been added to your briefcase`,
+                            message: `${this.outlet.name} has NOT been added to your briefcase`,
                             duration: 3000,
                             showCloseButton: true,
                             closeButtonText: 'OK'

@@ -7,13 +7,13 @@ import { NavController, LoadingController } from 'ionic-angular';
 
 import { MockObjects } from '../../mocks/mockobjects';
 
-import { ContactView } from '../contact-view/contact-view';
+import { OutletView } from '../outlet-view/outlet-view';
 
 @Component({
-    templateUrl: 'contact.html',
+    templateUrl: 'outlet.html',
     providers: [MockObjects]
 })
-export class Contact implements OnInit {
+export class Outlet implements OnInit {
 
     outlets: AIMC.Baltic.Mobile.App.Interfaces.Entities.Outlet[];
 
@@ -28,14 +28,7 @@ export class Contact implements OnInit {
     }
 
     goToContact(contact: AIMC.Baltic.Mobile.App.Interfaces.Entities.Contact) {
-
-        var loader = this.loadingController.create({
-            content: 'Loading your contact',
-            duration: 1000
-        });
-
-
-        this.navController.push(ContactView, {
+        this.navController.push(OutletView, {
             id: contact.id
         });
     }
