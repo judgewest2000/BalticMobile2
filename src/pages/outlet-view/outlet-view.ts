@@ -5,6 +5,9 @@ import { NavController, NavParams, ActionSheetController, ToastController } from
 
 import { MockObjects } from '../../mocks/mockobjects';
 
+import { ProfileView } from '../profile-view/profile-view';
+
+
 @Component({
     templateUrl: 'outlet-view.html', 
     providers: [MockObjects]
@@ -38,6 +41,12 @@ export class OutletView implements OnInit {
 
     email() {
         document.location.href = `mailto:${this.outlet.email}`;
+    }
+
+    showProfile() {
+        this.navController.push(ProfileView, {
+            entity: this.outlet
+        });
     }
 
     addToCart() {

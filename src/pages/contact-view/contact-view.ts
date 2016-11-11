@@ -7,6 +7,8 @@ import { MockObjects } from '../../mocks/mockobjects';
 
 import { OutletView } from '../outlet-view/outlet-view';
 
+import { ProfileView } from '../profile-view/profile-view';
+
 @Component({
     templateUrl: 'contact-view.html',
     providers: [MockObjects]
@@ -46,6 +48,12 @@ export class ContactView implements OnInit {
         this.navController.push(OutletView, {
             id: this.outlet.id
         });
+    }
+
+    showProfile() {
+        this.navController.push(ProfileView, {
+            entity: this.contact
+        });   
     }
 
     addToCart() {
