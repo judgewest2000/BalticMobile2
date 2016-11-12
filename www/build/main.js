@@ -21414,10 +21414,10 @@ var OutletView = (function () {
     OutletView.prototype.presentOptions = function () {
     };
     OutletView.prototype.call = function () {
-        document.location.href = "tel:" + this.outlet.telephone;
+        window.open("tel:" + this.outlet.telephone, "_system", "location=yes");
     };
     OutletView.prototype.email = function () {
-        document.location.href = "mailto:" + this.outlet.email;
+        window.open("mailto:" + this.outlet.email, '_system', 'location=yes');
     };
     OutletView.prototype.showProfile = function () {
         this.navController.push(__WEBPACK_IMPORTED_MODULE_3__profile_view_profile_view__["a" /* ProfileView */], {
@@ -34305,10 +34305,10 @@ var ContactView = (function () {
         this.outlet = this.mockObjects.getOutlets().filter(function (o) { return o.id == _this.contact.outletId; })[0];
     };
     ContactView.prototype.call = function () {
-        document.location.href = "tel:" + this.contact.telephone;
+        window.open("tel:" + this.contact.telephone, "_system", "location=yes");
     };
     ContactView.prototype.email = function () {
-        document.location.href = "mailto:" + this.contact.email;
+        window.open("mailto:" + this.contact.email, '_system', 'location=yes');
     };
     ContactView.prototype.goToOutlet = function () {
         this.navController.push(__WEBPACK_IMPORTED_MODULE_3__outlet_view_outlet_view__["a" /* OutletView */], {
