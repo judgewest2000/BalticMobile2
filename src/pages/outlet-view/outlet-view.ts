@@ -35,12 +35,12 @@ export class OutletView implements OnInit {
 
     }
 
-    call() {
-        document.location.href = `tel:${this.outlet.telephone}`;
+      call() {
+        window.open(`tel:${this.outlet.telephone}`, `_system`, `location=yes`);
     }
 
     email() {
-        document.location.href = `mailto:${this.outlet.email}`;
+        window.open(`mailto:${this.outlet.email}`, '_system', 'location=yes');
     }
 
     showProfile() {

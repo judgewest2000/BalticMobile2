@@ -37,11 +37,11 @@ export class ContactView implements OnInit {
     }
     
     call() {
-        document.location.href = `tel:${this.contact.telephone}`;
+        window.open(`tel:${this.contact.telephone}`, `_system`, `location=yes`);
     }
 
     email() {
-        document.location.href = `mailto:${this.contact.email}`;
+        window.open(`mailto:${this.contact.email}`, '_system', 'location=yes');
     }
 
     goToOutlet() {
