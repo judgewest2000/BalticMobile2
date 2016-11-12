@@ -9,7 +9,7 @@ import { ProfileView } from '../profile-view/profile-view';
 
 
 @Component({
-    templateUrl: 'outlet-view.html', 
+    templateUrl: 'outlet-view.html',
     providers: [MockObjects]
 })
 export class OutletView implements OnInit {
@@ -32,14 +32,17 @@ export class OutletView implements OnInit {
     }
 
     presentOptions() {
-  
+
     }
 
-      call() {
-        window.open(`tel:${this.outlet.telephone}`, `_system`, `location=yes`);
+    call() {
+
+        var sanitizedNumber = this.outlet.telephone.replace(/\D/g,'');
+
+        window.open(`tel:${sanitizedNumber}`, `_system`, `location=yes`);
     }
 
-    email() { 
+    email() {
         window.open(`mailto:${this.outlet.email}`, '_system', 'location=yes');
     }
 
@@ -76,7 +79,7 @@ export class OutletView implements OnInit {
                             duration: 3000,
                             showCloseButton: true,
                             closeButtonText: 'OK'
-                            
+
                         });
                         toast.present();
                     }

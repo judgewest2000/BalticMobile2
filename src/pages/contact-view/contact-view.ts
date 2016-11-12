@@ -37,7 +37,9 @@ export class ContactView implements OnInit {
     }
     
     call() {
-        window.open(`tel:${this.contact.telephone}`, `_system`, `location=yes`);
+        var sanitizedNumber = this.outlet.telephone.replace(/\D/g,'');
+
+        window.open(`tel:${sanitizedNumber}`, `_system`, `location=yes`);
     }
 
     email() {
