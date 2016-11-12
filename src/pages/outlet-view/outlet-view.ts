@@ -37,9 +37,28 @@ export class OutletView implements OnInit {
 
     call() {
 
-        var sanitizedNumber = this.outlet.telephone.replace(/\D/g,'');
+        let actionSheet = this.actionSheetController.create({
+            title: `Call ${this.outlet.telephone}`,
+            buttons: [
+                {
+                    text: 'Confirm',
+                    handler: () => {
+                        var sanitizedNumber = this.outlet.telephone.replace(/\D/g, '');
 
-        window.open(`tel:${sanitizedNumber}`, `_system`, `location=yes`);
+                        window.open(`tel:${sanitizedNumber}`, `_system`, `location=yes`);
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: () => {
+
+                    }
+                }
+            ]
+        });
+
+        actionSheet.present();
+
     }
 
     email() {

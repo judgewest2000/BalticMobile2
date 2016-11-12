@@ -35,11 +35,32 @@ export class ContactView implements OnInit {
         this.outlet = this.mockObjects.getOutlets().filter(o => o.id == this.contact.outletId)[0];
 
     }
-    
-    call() {
-        var sanitizedNumber = this.outlet.telephone.replace(/\D/g,'');
 
-        window.open(`tel:${sanitizedNumber}`, `_system`, `location=yes`);
+    call() {
+
+        let actionSheet = this.actionSheetController.create({
+            title: `Call ${this.contact.telephone}`,
+            buttons: [
+                {
+                    text: 'Confirm',
+                    handler: () => {
+                        var sanitizedNumber = this.contact.telephone.replace(/\D/g, '');
+
+                        window.open(`tel:${sanitizedNumber}`, `_system`, `location=yes`);
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: () =>{
+
+                    }
+                }
+            ]
+        });
+
+        actionSheet.present();
+
+
     }
 
     email() {
@@ -55,7 +76,7 @@ export class ContactView implements OnInit {
     showProfile() {
         this.navController.push(ProfileView, {
             entity: this.contact
-        });   
+        });
     }
 
     addToCart() {
@@ -85,7 +106,7 @@ export class ContactView implements OnInit {
                             duration: 3000,
                             showCloseButton: true,
                             closeButtonText: 'OK'
-                            
+
                         });
                         toast.present();
                     }
