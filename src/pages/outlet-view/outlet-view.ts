@@ -32,14 +32,14 @@ export class OutletView implements OnInit {
     }
 
     presentOptions() {
-
+  
     }
 
       call() {
         window.open(`tel:${this.outlet.telephone}`, `_system`, `location=yes`);
     }
 
-    email() {
+    email() { 
         window.open(`mailto:${this.outlet.email}`, '_system', 'location=yes');
     }
 
