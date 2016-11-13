@@ -16,7 +16,7 @@
 
   <platform name="android">
     <allow-intent href="market:*"/>
-     
+     <plugin name="cordova-plugin-crosswalk-webview" />
   </platform>
 
   <platform name="ios">
@@ -45,6 +45,6 @@
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
   <plugin name="cordova-plugin-inappbrowser" spec="~1.5.0" />
 
-     <plugin name="cordova-plugin-crosswalk-webview" />
+     
 
 </widget>
