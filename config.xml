@@ -17,6 +17,7 @@
   <platform name="android">
     <allow-intent href="market:*"/>
      <plugin name="cordova-plugin-crosswalk-webview" />
+     <preference name="xwalkVersion" value="14+" />
   </platform>
 
   <platform name="ios">
