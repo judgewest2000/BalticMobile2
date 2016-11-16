@@ -1,7 +1,7 @@
 /// <reference path="../../../main.d.ts" />"
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 
 
 /*
@@ -22,9 +22,13 @@ export class MapPage {
 
     postCode: string;
 
-    constructor(public navCtrl: NavController, private elementRef: ElementRef, navParams: NavParams) {
+    constructor(private menuController: MenuController, public navCtrl: NavController, private elementRef: ElementRef, navParams: NavParams) {
         this.postCode = navParams.get('postcode');
 
+    }
+
+    ionViewDidEnter() {      
+        this.menuController.swipeEnable(false);
     }
 
     ngAfterViewInit() {
@@ -37,9 +41,9 @@ export class MapPage {
             });
 
             new google.maps.Marker({
-              position: location,
-              map: this.googleMap,
-              title: 'Target'
+                position: location,
+                map: this.googleMap,
+                title: 'Target'
             });
         };
 
