@@ -80,13 +80,84 @@ He is part of the Sports Desk.`,
                 avatarUrl: 'https://pbs.twimg.com/profile_images/466972537704824832/eflEColL_normal.png',
                 telephone: '+44 (20) 7873 3000',
                 email: 'ean@ft.com',
-                profile: `Financial Times is a broadsheet newspaper covering business, finance, politics and technology. The weekday section provides features on business people, ideas and developments, delivering information on business and finance. FTfm section covers global fund management industry, prices and FT fund ratings, providing analysis and debate to asset managers and private investors. The newspaper was first published in 1888 and is published Monday to Saturday.`
+                address: {
+                    line1: '1 Southwark Bridge',
+                    city: 'London',
+                    postCode: 'SE1 9HL'
+                },
+                profile: `Financial Times is a broadsheet newspaper covering business, finance, politics and technology. The weekday section provides features on business people, ideas and developments, delivering information on business and finance. FTfm section covers global fund management industry, prices and FT fund ratings, providing analysis and debate to asset managers and private investors. The newspaper was first published in 1888 and is published Monday to Saturday.
+
+The outlet offers RSS (Really Simple Syndication)
+
+ISSN: 0307-1766 
+PR Accepted in: English 
+
+National Readership Survey (NRS) Readership Estimates - Newspapers and Supplements AIR - Latest 12 Months : April 2012 - March 2013
+Est Population 15+ : 50828(000) 
+Total Adult AIR: 312(000) = 0.6% 
+Total Men AIR: 229(000) = 0.9% 
+Total Women AIR: 83(000) = 0.3% 
+Total 15-34 AIR: 122(000) = 0.8% 
+Total 35+ AIR: 190(000) = 0.5% 
+Total ABC1 AIR: 268(000) = 1.0% 
+Total C2DE AIR: 44(000) = 0.1% 
+
+Awards: British Press Awards: Newspaper of the Year (2008) 
+
+Letters to the editor should be sent to letters.editor@ft.com 
+All appointment changes should go through conews@ft.com
+
+Main Financial Times Desks - 
+Arts Desk - Email : arts@ft.com 
+Capital Markets Desk - Tel No : 020 7873 3216 
+Comment & Analysis Desk - Tel No : 020 7775 6443 
+Consumer Service - Tel No : 020 7873 4864 
+Economics Desk - Tel No : 020 7873 3214 
+Graphics Desk - Tel No : 020 7873 3000 
+Industry Desk - 020 7873 3471 
+Lex Commentators Desk - Email : lexdesk@ft.com 
+Markets Desk - Tel No : 020 7873 3000 
+Media Desk - Tel No : 020 7873 4073 
+Money FT - Tel No : 020 7873 3544 
+News Desk - Tel No : 020 7873 3433 Email : ean@ft.com 
+Pictures Desk - Tel No : 020 7873 3655 Email : pictures@ft.com 
+Political Desk - Tel No : 020 7873 3379 
+Public Policy Group - Tel No : 020 7873 4155 
+Special Reports : email : reports@ft.com
+UK Companies Desk  Email : companies@ft.com 
+Weekend FT - Tel No : 020 7873 3000 Email : eaw@ft.com 
+World News Desk : Tel No : 020 7873 3000
+
+Daily Newspaper Sections :
+FT Life & Arts
+FT House & Home
+FT Money Guide
+FT Digital Business
+FastFT
+Executive Appointments
+
+Daily Newspaper Special Sections (Please see supplements tab for the full listing) :
+How To Spend It
+FT Weekend Magazine
+FT Global Traveller
+FT Wealth Magazine
+FT Money
+
+Daily Newspaper Editions:
+Financial Times (1st Edition)
+Financial Times (Frankfurt Edition)
+`
             }, {
                 id: 27495,
                 name: 'The Sunday Telegraph (Daily Newspaper)',
                 avatarUrl: 'https://pbs.twimg.com/profile_images/704631788019314688/D20twdRX_normal.jpg',
                 telephone: '+44 (20) 7931 2000',
                 email: 'stnews@telegraph.co.uk',
+                 address: {
+                    line1: '111 Buckingham Palace Road',
+                    city: 'London',
+                    postCode: 'SW1W 0DT'
+                },
                 profile: `The Sunday Telegraph is a Sunday newspaper covering news, current affairs, business, culture, entertainment,  jobs, lifestyle, money, sport and travel. 
 
 The paper was awarded 'Front Page of the Year' at the Press Awards.

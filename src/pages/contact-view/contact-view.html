@@ -41,7 +41,7 @@
 
         <button ion-item (click)="goToMap()">
             <ion-icon name="map" item-left></ion-icon>
-            <p>Go to map</p>
+            <p [innerHTML]="getAddress()" text-wrap>
         </button>
 
     </ion-list>

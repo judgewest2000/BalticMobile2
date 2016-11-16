@@ -7,6 +7,7 @@ import { MockObjects } from '../../mocks/mockobjects';
 
 import { ProfileView } from '../profile-view/profile-view';
 
+import { MapPage } from '../map/map';
 
 @Component({
     templateUrl: 'outlet-view.html',
@@ -31,8 +32,18 @@ export class OutletView implements OnInit {
         this.outlet = this.mockObjects.getOutlets().filter(o => o.id == this.id)[0];
     }
 
-    presentOptions() {
+    getAddress() {
+        let address = '';
+        for (let prop in this.outlet.address) {
+            address += this.outlet.address[prop] + '<br />';
+        }
+        return address;
+    }
 
+   goToMap() {
+        this.navController.push(MapPage, {
+            postcode: this.outlet.address.postCode
+        });
     }
 
     call() {

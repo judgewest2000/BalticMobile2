@@ -10,7 +10,7 @@
 
     <ion-list>
 
-        <ion-item>
+        <ion-item text-wrap>
             <img src="{{outlet.avatarUrl}}" />
             <h1>{{outlet.name}}</h1>
         </ion-item>
@@ -33,6 +33,11 @@
         <button ion-item (click)="showProfile()">
             <ion-icon name="chatboxes" item-left></ion-icon>
             <p>Profile</p>
+        </button>
+
+        <button ion-item (click)="goToMap()">
+            <ion-icon name="map" item-left></ion-icon>
+            <p [innerHTML]="getAddress()" text-wrap>
         </button>
 
     </ion-list>

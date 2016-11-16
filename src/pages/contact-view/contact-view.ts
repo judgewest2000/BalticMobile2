@@ -38,6 +38,16 @@ export class ContactView implements OnInit {
 
     }
 
+    getAddress() {
+        let address = '';
+        for (let prop in this.outlet.address) {
+            address += this.outlet.address[prop] + '<br />';
+        }
+        return address;
+    }
+
+
+
     call() {
 
         let actionSheet = this.actionSheetController.create({
@@ -75,8 +85,10 @@ export class ContactView implements OnInit {
         });
     }
 
-    goToMap(){
-        this.navController.push(MapPage);
+    goToMap() {
+        this.navController.push(MapPage, {
+            postcode: this.outlet.address.postCode
+        });
     }
 
     showProfile() {
