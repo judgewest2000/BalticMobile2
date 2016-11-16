@@ -2,12 +2,13 @@
     <ion-navbar>
         <ion-title>My Outlets</ion-title>
     </ion-navbar>
+      <ion-searchbar placeholder="Filter..." (ionInput)="filterItems($event)"></ion-searchbar>
 </ion-header>
 
 
 <ion-content class="outlet">
 
-    <ion-searchbar placeholder="Filter..." (ionInput)="filterItems($event)"></ion-searchbar>
+    <!--<ion-searchbar placeholder="Filter..." (ionInput)="filterItems($event)"></ion-searchbar>-->
 
     <ion-list>
         <button ion-item *ngFor="let outlet of outlets" (click)="goToOutlet(outlet)">

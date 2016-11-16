@@ -2,12 +2,13 @@
     <ion-navbar>
         <ion-title>My Contacts</ion-title>
     </ion-navbar>
+    <ion-searchbar placeholder="Filter..." (ionInput)="filterItems($event)"></ion-searchbar>
 </ion-header>
 
 
 <ion-content class="contact">
 
-    <ion-searchbar placeholder="Filter..." (ionInput)="filterItems($event)"></ion-searchbar>
+    <!--<ion-searchbar placeholder="Filter..." (ionInput)="filterItems($event)"></ion-searchbar>-->
 
     <ion-list>
         <button ion-item *ngFor="let contact of contacts" (click)="goToContact(contact)">
