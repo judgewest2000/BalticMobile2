@@ -6,7 +6,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  template: `<ion-nav [root]="rootPage" swipeBackEnabled="false"></ion-nav>`
 })
 export class MyApp {
   rootPage = TabsPage;
@@ -17,6 +17,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+
     });
   }
 }
