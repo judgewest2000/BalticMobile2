@@ -9,6 +9,8 @@ import { OutletView } from '../outlet-view/outlet-view';
 
 import { ProfileView } from '../profile-view/profile-view';
 
+import { MapPage } from '../map/map';
+
 @Component({
     templateUrl: 'contact-view.html',
     providers: [MockObjects]
@@ -51,7 +53,7 @@ export class ContactView implements OnInit {
                 },
                 {
                     text: 'Cancel',
-                    handler: () =>{
+                    handler: () => {
 
                     }
                 }
@@ -71,6 +73,10 @@ export class ContactView implements OnInit {
         this.navController.push(OutletView, {
             id: this.outlet.id
         });
+    }
+
+    goToMap(){
+        this.navController.push(MapPage);
     }
 
     showProfile() {

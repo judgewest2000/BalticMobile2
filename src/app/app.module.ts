@@ -7,10 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ContactView } from '../pages/contact-view/contact-view';
 import { ProfileView } from '../pages/profile-view/profile-view'
-
 import {Outlet} from '../pages/outlet/outlet';
-
 import {OutletView} from '../pages/outlet-view/outlet-view';
+import {MapPage} from '../pages/map/map';
 
 @NgModule({
     declarations: [
@@ -21,6 +20,7 @@ import {OutletView} from '../pages/outlet-view/outlet-view';
         Outlet,
         OutletView,
         ProfileView,
+        MapPage,
         HomePage,
         TabsPage
     ],
@@ -36,6 +36,7 @@ import {OutletView} from '../pages/outlet-view/outlet-view';
         Outlet,
         OutletView,
         ProfileView,
+        MapPage,
         HomePage,
         TabsPage
     ],
