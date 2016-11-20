@@ -16,7 +16,8 @@
 
   <platform name="android">
     <allow-intent href="market:*"/>
-    <plugin name="cordova-plugin-crosswalk-webview" spec="~1.8.0" />
+    <!--<plugin name="cordova-plugin-crosswalk-webview" spec="~1.8.0" />-->
+
   </platform>
 
   <platform name="ios">
