@@ -83,7 +83,10 @@ He is part of the Sports Desk.`,
                 address: {
                     line1: '1 Southwark Bridge',
                     city: 'London',
-                    postCode: 'SE1 9HL'
+                    postCode: 'SE1 9HL',
+                    latitude: 51.50746410000001,
+                    longitude: -0.09441949999995813
+
                 },
                 profile: `Financial Times is a broadsheet newspaper covering business, finance, politics and technology. The weekday section provides features on business people, ideas and developments, delivering information on business and finance. FTfm section covers global fund management industry, prices and FT fund ratings, providing analysis and debate to asset managers and private investors. The newspaper was first published in 1888 and is published Monday to Saturday.
 
@@ -156,7 +159,9 @@ Financial Times (Frankfurt Edition)
                  address: {
                     line1: '111 Buckingham Palace Road',
                     city: 'London',
-                    postCode: 'SW1W 0DT'
+                    postCode: 'SW1W 0DT',
+                    latitude: 51.4948533,
+                    longitude: -0.14582849999999326
                 },
                 profile: `The Sunday Telegraph is a Sunday newspaper covering news, current affairs, business, culture, entertainment,  jobs, lifestyle, money, sport and travel. 
 

@@ -1,11 +1,14 @@
 ﻿
 declare module AIMC.Baltic.Mobile.App.Interfaces.Entities {
 
-    interface Address{
+    interface Address {
         line1: string;
         line2?: string;
         city: string;
         postCode: string;
+        latitude: number;
+        longitude: number;
+
     }
 
     interface Entity {
@@ -15,7 +18,7 @@ declare module AIMC.Baltic.Mobile.App.Interfaces.Entities {
         telephone: string;
         email: string;
         profile: string;
-        
+
     }
 
     interface Contact extends Entity {

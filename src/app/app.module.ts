@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
@@ -9,7 +9,9 @@ import { ContactView } from '../pages/contact-view/contact-view';
 import { ProfileView } from '../pages/profile-view/profile-view'
 import {Outlet} from '../pages/outlet/outlet';
 import {OutletView} from '../pages/outlet-view/outlet-view';
-import {MapPage} from '../pages/map/map';
+import { MapPage } from '../pages/map/map';
+
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
     declarations: [
@@ -25,7 +27,8 @@ import {MapPage} from '../pages/map/map';
         TabsPage
     ],
     imports: [
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        AgmCoreModule.forRoot({ apiKey: 'AIzaSyAKaXMcBG0PGJdKi8CBvmFhNaV7e2LRJSE'})
     ],
     bootstrap: [IonicApp],
     entryComponents: [
